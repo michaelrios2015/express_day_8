@@ -23,5 +23,20 @@
 
 // but now we need to start using gitingnore or we should start using it 
 
+// of so this is the start of express which is just a bunch of pre written 
+// code to make using the node HTTP thing from day 7 easier to use and
+// it does... lot less code.. much of it just magic to me but that is ok
 
-console.log('Hi!!');
+// this is just how we get code from the modules in the backend
+// essentially just importing the express library
+const express = require('express');
+
+// I assume I am initalizing and instance or some such, no new 
+const app = express();
+// not sure looks like it is just a function??? a function in a varible
+// I guess so
+console.log(app.toString());
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, ()=> console.log(`listening on port ${port}`));
