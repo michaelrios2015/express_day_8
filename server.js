@@ -32,11 +32,50 @@
 const express = require('express');
 
 // I assume I am initalizing and instance or some such, no new 
+// no seems to just put a function in varibable interesting... really need to know more of the basics
 const app = express();
+
+// console.log(express.toString());
 // not sure looks like it is just a function??? a function in a varible
 // I guess so
-console.log(app.toString());
+// console.log(app.toString());
 
+
+// so I think this is the main gain, instead of having a bunch of if statement
+// we can just tell it the address we are looking for we also get to exclude
+// some lines of code... not sure how we do a catch all and next is imporant
+// but not entirely sure how
+
+app.get('/', (req, res, next)=> {
+    res.send(`
+    <html>
+    <body>
+        <h1>!!FORDHAM!!</h1>
+    </body>
+    </html>`)
+})
+
+
+app.get('/rams', (req, res, next)=> {
+    res.send(`
+    <html>
+    <body>
+        <h1>!!rams!!</h1>
+    </body>
+    </html>`)
+})
+
+
+
+
+
+// this is the same as without express process.env.PORT is just what we us when deployed is it always this, IDK
 const port = process.env.PORT || 3000;
 
+// I think this is a bit less but even if it is not now it tells you 
+// why it fails
 app.listen(port, ()=> console.log(`listening on port ${port}`));
+
+
+
+
